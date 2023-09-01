@@ -1,0 +1,73 @@
+// Base class
+class Animal {
+    protected String species;
+
+    public Animal(String species) {
+        this.species = species;
+    }
+
+    public void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+
+    public void displayInfo() {
+        System.out.println("Species: " + species);
+    }
+}
+
+// Subclass inheriting from Animal
+class Dog extends Animal {
+    private String breed;
+
+    public Dog(String species, String breed) {
+        super(species);
+        this.breed = breed;
+    }
+
+    // Overriding the makeSound method from the base class
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks");
+    }
+
+    public void displayBreed() {
+        System.out.println("Breed: " + breed);
+    }
+}
+
+// Subclass inheriting from Animal
+class Cat extends Animal {
+    private String furColor;
+
+    public Cat(String species, String furColor) {
+        super(species);
+        this.furColor = furColor;
+    }
+
+    // Overriding the makeSound method from the base class
+    @Override
+    public void makeSound() {
+        System.out.println("Cat meows");
+    }
+
+    public void displayFurColor() {
+        System.out.println("Fur color: " + furColor);
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog("Dog", "Labrador");
+        Cat cat = new Cat("Cat", "Calico");
+
+        dog.displayInfo();
+        dog.makeSound();
+        dog.displayBreed();
+
+        System.out.println();
+
+        cat.displayInfo();
+        cat.makeSound();
+        cat.displayFurColor();
+    }
+}
